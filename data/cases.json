@@ -3,18 +3,122 @@
         "case_id": 1,
         "title": "The Missing Necklace",
         "location": "Rosewood Hotel",
-        "status": "Active"
+        "status": "Active",
+        "suspects": [
+            {
+                "name": "James Carter",
+                "role": "Hotel Manager",
+                "statement": "I was in my office checking the hotel accounts."
+            },
+            {
+                "name": "Maya Thompson",
+                "role": "Guest",
+                "statement": "I left my room for dinner at 8 PM."
+            },
+            {
+                "name": "Sarah Wilson",
+                "role": "Housekeeper",
+                "statement": "I was cleaning rooms on the second floor."
+            }
+        ],
+        "evidence": [
+            {
+                "id": 1,
+                "description": "A hotel keycard found near the jewelry box.",
+                "location": "Room 204"
+            },
+            {
+                "id": 2,
+                "description": "Security footage showing someone entering Room 204.",
+                "location": "Hotel hallway"
+            },
+            {
+                "id": 3,
+                "description": "A torn receipt from the hotel restaurant.",
+                "location": "Lobby"
+            }
+        ],
+        "witnesses": [
+            {
+                "name": "Daniel Brown",
+                "statement": "I saw someone wearing a black jacket near Room 204."
+            },
+            {
+                "name": "Emily Green",
+                "statement": "The hallway lights went off for a few minutes that evening."
+            }
+        ]
     },
     {
         "case_id": 2,
         "title": "The Locked Room",
         "location": "Hillcrest Mansion",
-        "status": "Active"
+        "status": "Active",
+        "suspects": [
+            {
+                "name": "Robert King",
+                "role": "Property Owner",
+                "statement": "I was downstairs speaking to the guests."
+            },
+            {
+                "name": "Clara Adams",
+                "role": "Personal Assistant",
+                "statement": "I was working in the library."
+            }
+        ],
+        "evidence": [
+            {
+                "id": 1,
+                "description": "A broken window latch.",
+                "location": "Study"
+            },
+            {
+                "id": 2,
+                "description": "Mud footprints near the window.",
+                "location": "Study"
+            }
+        ],
+        "witnesses": [
+            {
+                "name": "Thomas Reed",
+                "statement": "I heard glass break around midnight."
+            }
+        ]
     },
     {
         "case_id": 3,
         "title": "The Vanished Documents",
         "location": "Briarwood Offices",
-        "status": "Active"
+        "status": "Active",
+        "suspects": [
+            {
+                "name": "Olivia Stone",
+                "role": "Executive Assistant",
+                "statement": "I left the office at 6 PM."
+            },
+            {
+                "name": "Michael Clark",
+                "role": "IT Technician",
+                "statement": "I was repairing a computer on the third floor."
+            }
+        ],
+        "evidence": [
+            {
+                "id": 1,
+                "description": "An access log showing an unknown login.",
+                "location": "Server room"
+            },
+            {
+                "id": 2,
+                "description": "A USB drive discovered under a desk.",
+                "location": "Executive office"
+            }
+        ],
+        "witnesses": [
+            {
+                "name": "Grace Miller",
+                "statement": "I noticed someone leaving the executive office after hours."
+            }
+        ]
     }
 ]

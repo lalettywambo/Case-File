@@ -1,5 +1,6 @@
 from src.authentication import register_detective, login_detective
-from src.cases import view_cases
+from src.cases import view_cases, select_case
+from src.investigation import investigate_case
 
 
 def start_casefile():
@@ -26,7 +27,19 @@ def start_casefile():
         if detective:
             print("\n Login successful.")
             print(f"Welcome, Detective {detective.name}!")
-            view_cases()
+view_cases()
 
-    else:
-        print("\n❌ Invalid choice.")
+selected_case = select_case()
+
+if selected_case:
+    print("\n CASE SELECTED")
+    print("--------------------")
+    print(f"Case #{selected_case['case_id']}")
+    print(f"Title: {selected_case['title']}")
+    print(f"Location: {selected_case['location']}")
+    print(f"Status: {selected_case['status']}")
+
+    investigate_case(selected_case)
+
+else:
+     print("\n❌ Invalid choice.")
