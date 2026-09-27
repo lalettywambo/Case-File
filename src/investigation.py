@@ -1,3 +1,7 @@
+from src.data_manager import save_record
+from src.models import EvidenceItem, WitnessItem
+
+
 def investigate_case(case):
     while True:
         print("\n╔══════════════════════════════════════╗")
@@ -46,13 +50,16 @@ def view_suspects(case):
 
 
 def view_evidence(case):
-    print("\n EVIDENCE")
+    print("\n🧩 EVIDENCE")
     print("=" * 40)
 
     for evidence in case["evidence"]:
-        print(f"\nEvidence #{evidence['id']}")
-        print(f"Description: {evidence['description']}")
-        print(f"Found at: {evidence['location']}")
+        item = EvidenceItem(
+            evidence["description"],
+            evidence["location"]
+        )
+
+        item.display()
 
     input("\nPress Enter to return to the investigation menu...")
 
@@ -62,11 +69,14 @@ def interview_witnesses(case):
     print("=" * 40)
 
     for witness in case["witnesses"]:
-        print(f"\nWitness: {witness['name']}")
-        print(f"Statement: {witness['statement']}")
+        item = WitnessItem(
+            witness["name"],
+            witness["statement"]
+        )
+
+        item.display()
 
     input("\nPress Enter to return to the investigation menu...")
-
 
 def submit_theory(case):
     print("\n SUBMIT YOUR THEORY")
@@ -90,7 +100,25 @@ def submit_theory(case):
 
         print(f"\nYour theory: {selected_suspect['name']}")
 
-        print("\n Theory submitted for review.")
+        if selected_suspect["name"] == case["correct_suspect"]:
+            print("\n THEORY CORRECT!")
+            print("Excellent detective work.")
+
+            save_record(
+                case,
+                selected_suspect["name"],
+                "Correct"
+            )
+
+        else:
+            print("\n❌ THEORY INCORRECT.")
+            print(f"The actual suspect was: {case['correct_suspect']}")
+
+            save_record(
+                case,
+                selected_suspect["name"],
+                "Incorrect"
+            )
 
     except ValueError:
         print("\n❌ Please enter a number.")

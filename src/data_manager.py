@@ -39,3 +39,21 @@ def get_cases():
 
     except (FileNotFoundError, json.JSONDecodeError):
         return []
+
+def save_record(case, suspect, result):
+    try:
+        with open("data/records.json", "r") as file:
+            records = json.load(file)
+
+    except (FileNotFoundError, json.JSONDecodeError):
+        records = []
+
+    records.append({
+        "case_id": case["case_id"],
+        "case_title": case["title"],
+        "suspect": suspect,
+        "result": result
+    })
+
+    with open("data/records.json", "w") as file:
+        json.dump(records, file, indent=4)

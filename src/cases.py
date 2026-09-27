@@ -1,5 +1,5 @@
 from src.data_manager import get_cases
-
+from src.exceptions import CaseNotFoundError
 
 def view_cases():
     
@@ -24,8 +24,7 @@ def select_case():
     cases = get_cases()
 
     if not cases:
-        print("\n❌ No cases available.")
-        return None
+        raise CaseNotFoundError("No cases are available.")
 
     choice = input("\nEnter the case number you want to investigate: ")
 
@@ -39,5 +38,4 @@ def select_case():
         if case["case_id"] == choice:
             return case
 
-    print("\n❌ Case not found.")
-    return None
+    raise CaseNotFoundError(f"Case #{choice} was not found.")
