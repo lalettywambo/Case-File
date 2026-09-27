@@ -3,7 +3,7 @@ from src.data_manager import save_detective, get_detectives
 
 
 def register_detective():
-    print("\n CREATE DETECTIVE ACCOUNT")
+    print("\nCREATE DETECTIVE ACCOUNT")
 
     name = input("Enter your name: ")
     email = input("Enter your email: ")
@@ -13,13 +13,13 @@ def register_detective():
 
     save_detective(detective)
 
-    print("\n Detective account created successfully!")
+    print("\nDetective account created successfully!")
 
     return detective
 
 
 def login_detective():
-    print("\n DETECTIVE LOGIN")
+    print("\nDETECTIVE LOGIN")
 
     email = input("Enter your email: ")
     password = input("Enter your password: ")
@@ -28,12 +28,12 @@ def login_detective():
 
     for detective in detectives:
         if detective["email"] == email and detective["password"] == password:
-            print(f"\n Welcome back, Detective {detective['name']}!")
+            print(f"\nWelcome back, Detective {detective['name']}!")
             return Detective(
                 detective["name"],
                 detective["email"],
                 detective["password"]
             )
 
-    print("\n❌ Incorrect email or password.")
+    print("\nIncorrect email or password.")
     return None

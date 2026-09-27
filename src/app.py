@@ -20,7 +20,7 @@ def start_casefile():
         if choice == "1":
             detective = register_detective()
 
-            print("\n DETECTIVE PROFILE")
+            print("\nDETECTIVE PROFILE")
             print("--------------------")
             detective.display_profile()
 
@@ -28,19 +28,19 @@ def start_casefile():
             detective = login_detective()
 
             if detective:
-                print("\n Login successful.")
+                print("\nLogin successful.")
                 print(f"Welcome, Detective {detective.name}!")
 
                 view_cases()
 
                 try:
-                        selected_case = select_case()
+                    selected_case = select_case()
                 except CaseNotFoundError as error:
-                        print(f"\n❌ {error}")
-                        selected_case = None
+                    print(f"\n{error}")
+                    selected_case = None
 
                 if selected_case:
-                    print("\n CASE SELECTED")
+                    print("\nCASE SELECTED")
                     print("--------------------")
                     print(f"Case #{selected_case['case_id']}")
                     print(f"Title: {selected_case['title']}")
@@ -50,8 +50,8 @@ def start_casefile():
                     investigate_case(selected_case)
 
         elif choice == "3":
-            print("\n Goodbye, Detective.")
+            print("\nGoodbye, Detective.")
             break
 
         else:
-            print("\n❌ Invalid choice.")
+            print("\nInvalid choice.")
