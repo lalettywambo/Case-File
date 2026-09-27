@@ -4,6 +4,7 @@
         "title": "The Missing Necklace",
         "location": "Rosewood Hotel",
         "status": "Active",
+        "correct_suspect": "James Carter",
         "suspects": [
             {
                 "name": "James Carter",
@@ -54,6 +55,7 @@
         "title": "The Locked Room",
         "location": "Hillcrest Mansion",
         "status": "Active",
+        "correct_suspect": "Clara Adams",
         "suspects": [
             {
                 "name": "Robert King",
@@ -90,6 +92,7 @@
         "title": "The Vanished Documents",
         "location": "Briarwood Offices",
         "status": "Active",
+        "correct_suspect": "Michael Clark",
         "suspects": [
             {
                 "name": "Olivia Stone",
