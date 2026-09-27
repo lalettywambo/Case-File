@@ -5,6 +5,7 @@ FILE_PATH = "data/users.json"
 
 
 def save_detective(detective):
+    # Start a fresh list if the file is missing or empty on first run.
     try:
         with open(FILE_PATH, "r") as file:
             detectives = json.load(file)

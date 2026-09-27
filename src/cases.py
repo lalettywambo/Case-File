@@ -10,7 +10,7 @@ def view_cases():
     print("╚══════════════════════════════════════╝")
 
     if not cases:
-        print("\n❌ No cases available.")
+        print("\nNo cases available.")
         return
 
     for case in cases:
@@ -21,6 +21,7 @@ def view_cases():
         print("-" * 38)
 
 def select_case():
+    """Return the chosen case, or None if the input was not a number."""
     cases = get_cases()
 
     if not cases:
@@ -31,7 +32,7 @@ def select_case():
     try:
         choice = int(choice)
     except ValueError:
-        print("\n❌ Please enter a valid case number.")
+        print("\nPlease enter a valid case number.")
         return None
 
     for case in cases:

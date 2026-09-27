@@ -66,7 +66,7 @@ class EvidenceItem(InvestigationItem):
         self.location = location
 
     def display(self):
-        print(f"\n Evidence: {self.description}")
+        print(f"\nEvidence: {self.description}")
         print(f"Found at: {self.location}")
 
 
@@ -76,5 +76,5 @@ class WitnessItem(InvestigationItem):
         self.statement = statement
 
     def display(self):
-        print(f"\n Witness: {self.name}")
+        print(f"\nWitness: {self.name}")
         print(f"Statement: {self.statement}")

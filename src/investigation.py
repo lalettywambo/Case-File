@@ -30,15 +30,15 @@ def investigate_case(case):
             submit_theory(case)
 
         elif choice == "5":
-            print("\n Returning...")
+            print("\nReturning...")
             break
 
         else:
-            print("\n❌ Invalid choice.")
+            print("\nInvalid choice.")
 
 
 def view_suspects(case):
-    print("\n SUSPECTS")
+    print("\nSUSPECTS")
     print("=" * 40)
 
     for suspect in case["suspects"]:
@@ -50,7 +50,7 @@ def view_suspects(case):
 
 
 def view_evidence(case):
-    print("\n🧩 EVIDENCE")
+    print("\nEVIDENCE")
     print("=" * 40)
 
     for evidence in case["evidence"]:
@@ -65,7 +65,7 @@ def view_evidence(case):
 
 
 def interview_witnesses(case):
-    print("\n WITNESSES")
+    print("\nWITNESSES")
     print("=" * 40)
 
     for witness in case["witnesses"]:
@@ -79,7 +79,7 @@ def interview_witnesses(case):
     input("\nPress Enter to return to the investigation menu...")
 
 def submit_theory(case):
-    print("\n SUBMIT YOUR THEORY")
+    print("\nSUBMIT YOUR THEORY")
     print("=" * 40)
 
     print("\nWho do you believe is responsible?")
@@ -93,15 +93,16 @@ def submit_theory(case):
         choice = int(choice)
 
         if choice < 1 or choice > len(case["suspects"]):
-            print("\n❌ Invalid suspect number.")
+            print("\nInvalid suspect number.")
             return
 
+        # The menu is numbered from 1, so shift back to a list index.
         selected_suspect = case["suspects"][choice - 1]
 
         print(f"\nYour theory: {selected_suspect['name']}")
 
         if selected_suspect["name"] == case["correct_suspect"]:
-            print("\n THEORY CORRECT!")
+            print("\nTHEORY CORRECT!")
             print("Excellent detective work.")
 
             save_record(
@@ -111,7 +112,7 @@ def submit_theory(case):
             )
 
         else:
-            print("\n❌ THEORY INCORRECT.")
+            print("\nTHEORY INCORRECT.")
             print(f"The actual suspect was: {case['correct_suspect']}")
 
             save_record(
@@ -121,4 +122,4 @@ def submit_theory(case):
             )
 
     except ValueError:
-        print("\n❌ Please enter a number.")
+        print("\nPlease enter a number.")
