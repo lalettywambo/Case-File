@@ -54,3 +54,27 @@ class Case:
         print(f"Case #{self.case_id}: {self.title}")
         print(f"Location: {self.location}")
         print(f"Status: {self.status}")
+
+class InvestigationItem:
+    def display(self):
+        raise NotImplementedError("This method must be implemented.")
+
+
+class EvidenceItem(InvestigationItem):
+    def __init__(self, description, location):
+        self.description = description
+        self.location = location
+
+    def display(self):
+        print(f"\n Evidence: {self.description}")
+        print(f"Found at: {self.location}")
+
+
+class WitnessItem(InvestigationItem):
+    def __init__(self, name, statement):
+        self.name = name
+        self.statement = statement
+
+    def display(self):
+        print(f"\n Witness: {self.name}")
+        print(f"Statement: {self.statement}")
